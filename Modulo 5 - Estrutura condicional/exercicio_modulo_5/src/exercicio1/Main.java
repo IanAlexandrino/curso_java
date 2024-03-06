@@ -18,6 +18,10 @@ public class Main {
 
             System.out.println("NAO NEGATIVO");
 
+        } else {
+
+            System.out.println("Você digitou o número 0 portanto ele não é nem negativo nem positivo");
+
         }
 
         entrada.close();
