@@ -57,7 +57,7 @@ public class Student {
 
             System.out.printf("FINAL GRADE = %.2f%n", aux);
             System.out.println("FAILED");
-            System.out.printf("MISSING %.2f%n POINTS", 60.00 - aux);
+            System.out.printf("MISSING %.2f POINTS", 60.00 - aux);
 
         } else {
 
