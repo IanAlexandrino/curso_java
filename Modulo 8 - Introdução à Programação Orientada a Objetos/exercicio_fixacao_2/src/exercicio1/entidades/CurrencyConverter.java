@@ -6,10 +6,10 @@ public class CurrencyConverter {
 
     public static double converterDollar(double valorDolar, double dolarComprado){
 
-        double dolaConvertido = dolarComprado * valorDolar;
-        double valorIof = dolaConvertido * iof / 100;
+        double dolarConvertido = dolarComprado * valorDolar;
+        double valorIof = dolarConvertido * iof / 100;
 
-        return dolarComprado + valorIof;
+        return dolarConvertido + valorIof;
     }
 
 }
