@@ -39,14 +39,14 @@ public class Employee {
         this.tax = tax;
     }
 
-    public String netSalary(){
-        return "Employee: " + name + ", $ " + (grossSalary - tax);
+    public double netSalary(){
+        return grossSalary - tax;
     }
 
     public void increaseSalary(double percentage){
 
         double newIncrease = (percentage * grossSalary) / 100;
 
-        System.out.println("Update data: " + name + ", $ " + (grossSalary - tax) + newIncrease);
+        System.out.printf("Update data: " + name + ", $ %.2f%n", (grossSalary - tax) + newIncrease);
     }
 }
