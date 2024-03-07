@@ -10,7 +10,7 @@ public class Main {
         Locale.setDefault(Locale.US);
         Scanner entrada = new Scanner(System.in);
         float salario = entrada.nextFloat();
-        float impostoRenda, auxCalculo;
+        float impostoRenda;
 
         if (salario >= 0 && salario <= 2000.00){
 
@@ -20,20 +20,17 @@ public class Main {
 
             if (salario >= 2000.01 && salario <= 3000.00){
 
-                auxCalculo = salario - 2000;
-                impostoRenda = (8 * auxCalculo) / 100;
+                impostoRenda = (8 * (salario - 2000)) / 100;
                 System.out.printf("R$ %.2f%n", impostoRenda);
 
             } else if (salario >= 3000.01 && salario <= 4500.00) {
 
-                auxCalculo = (salario - 2000) - 1000;
-                impostoRenda = ((18 * auxCalculo) / 100) + 80;
+                impostoRenda = ((18 * ((salario - 2000) - 1000)) / 100) + 80;
                 System.out.printf("R$ %.2f%n", impostoRenda);
 
             } else if (salario >= 4500.01) {
 
-                auxCalculo = ((salario - 2000) - 1000) - 1500;
-                impostoRenda = (((28 * auxCalculo) / 100) + 80) + 270;
+                impostoRenda = (((28 * (((salario - 2000) - 1000) - 1500)) / 100) + 80) + 270;
                 System.out.printf("R$ %.2f%n", impostoRenda);
 
             }
