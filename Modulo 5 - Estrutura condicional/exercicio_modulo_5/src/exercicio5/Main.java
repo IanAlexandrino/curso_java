@@ -44,6 +44,9 @@ public class Main {
             default:
                 System.out.println("Código não existe!");
         }
+
+        entrada.close();
+
     }
 
 }
