@@ -36,18 +36,25 @@ public class Conta {
         return saldoConta;
     }
 
-    public double deposito(double valorDeposito){
-        return this.saldoConta += valorDeposito;
+    public String deposito(double valorDeposito){
+
+        this.saldoConta += valorDeposito;
+        System.out.println("Update account data:");
+
+        return this.toString();
     }
 
-    public double saque(double valorSaque){
-        return this.saldoConta -= (valorSaque + 5.00);
+    public String saque(double valorSaque){
+
+        this.saldoConta -= (valorSaque + 5.00);
+        System.out.println("Update account data:");
+
+        return this.toString();
     }
 
     public String toString(){
-        return "Account data: \n" +
-                "Account " + numeroConta + ", " +
+        return  "Account " + numeroConta + ", " +
                 "Holder: " + nomeTitular + ", " +
-                "Balance: $ " + saldoConta;
+                "Balance: $ " + String.format("%.2f", saldoConta);
     }
 }
