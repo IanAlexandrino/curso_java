@@ -1,4 +1,4 @@
-package problema_mais_velho.aplicacao;
+package problema_mais_velho;
 
 import java.util.Scanner;
 
