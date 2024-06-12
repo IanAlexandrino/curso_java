@@ -73,5 +73,7 @@ public class Main {
         System.out.println("Name: " + worker.getName());
         System.out.println("Department: " + worker.getDepartment().getName());
         System.out.printf("Income for " + dateString + ": %.2f", worker.income(year, month));
+
+        sc.close();
     }
 }
