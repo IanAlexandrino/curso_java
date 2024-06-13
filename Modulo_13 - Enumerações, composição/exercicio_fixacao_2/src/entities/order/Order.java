@@ -3,6 +3,7 @@ package entities.order;
 import entities.Client;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,5 +68,32 @@ public class Order {
         }
 
         return total;
+    }
+
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nORDER SUMMARY: \n");
+        sb.append("Order moment: ").append(moment.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"))).append("\n");
+        sb.append("Order status: ").append(status).append("\n");
+        sb.append("Client: ")
+                .append(client.getName())
+                .append(" (")
+                .append(client.getBirthDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
+                .append(") - ")
+                .append(client.getEmail())
+                .append("\n");
+        sb.append("Order items: \n");
+        for (OrderItem orderItem : orderItems){
+            sb.append(orderItem.getProduct().getName())
+                    .append(", $")
+                    .append(String.format("%.2f", orderItem.getPrice()))
+                    .append(", Quantity: ")
+                    .append(orderItem.getQuantity())
+                    .append(", Subtotal: $")
+                    .append(String.format("%.2f", orderItem.subTotal()))
+                    .append("\n");
+        }
+        sb.append("Total price: $").append(String.format("%.2f", total()));
+        return sb.toString();
     }
 }
