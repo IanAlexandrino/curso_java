@@ -12,6 +12,13 @@ public class Account {
     public Account() {
     }
 
+    public Account(Integer number, String holder, Double balance, Double withdrawLimit) {
+        this.number = number;
+        this.holder = holder;
+        this.balance = balance;
+        this.withdrawLimit = withdrawLimit;
+    }
+
     public Integer getNumber() {
         return number;
     }
@@ -45,11 +52,11 @@ public class Account {
     }
 
     public void withdraw(Double amount){
-        if (balance < amount){
-            throw new AccountException("The account does not have enough balance to carry out the transaction!");
-        }
         if (amount > withdrawLimit){
             throw new AccountException("The transaction amount is greater than the account withdrawal limit");
+        }
+        if (balance < amount){
+            throw new AccountException("The account does not have enough balance to carry out the transaction!");
         }
 
         this.balance -= amount;
